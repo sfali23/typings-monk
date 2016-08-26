@@ -1,6 +1,4 @@
-﻿/// <reference path="./monk.d.ts" />
-
-import * as monk from "monk";
+﻿var monk = require('monk');
 
 const MONGO_DATABASE_URI: string = "localhost:27017/myproject";
 

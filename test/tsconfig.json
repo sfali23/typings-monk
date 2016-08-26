@@ -5,6 +5,8 @@
         "noImplicitAny": true
     },
     "files": [
-        "monk.d.ts"
+        "monk-tests.ts",
+        "../typings/index.d.ts",
+        "../monk.d.ts"
     ]
 }
