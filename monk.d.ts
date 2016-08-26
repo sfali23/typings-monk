@@ -3,13 +3,9 @@
 // Definitions by: Syed Farhan Ali - https://github.com/sfali23
 // // Definitions: https://github.com/DefinitelyTyped/Monk
 
-export class Manager {
+import {Promise} from 'es6-promise';
 
-    /**
-     *
-     * @return Manager
-     */
-    constructor(uri: string, options?: Object, calback?: Object);
+export class Manager {
 
     get(collection: string): Collection;
 
