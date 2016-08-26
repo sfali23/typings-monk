@@ -20,7 +20,7 @@ export class Manager {
     then(callback: Function): Promise<Manager>;
 
     catch(callback: Function): Promise<Manager>;
-} // end of interface "Manager"
+} // end of class "Manager"
 
 export class Collection {
     /**
@@ -63,11 +63,13 @@ export class Collection {
     remove(query?: Object, options?: Object, callback?: Function): Promise<Object>;
 
     update(query: Object, update: Object, options?: Object, callback?: Function): Promise<Object[]>;
-} // end of interface "Collector"
+} // end of class "Collector"
 
 declare namespace monk {
 
     export function monk(uri: string, options?: Object, calback?: Object): Manager;
+
+    export function id(id?: any): any;
 
 }
 
