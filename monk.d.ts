@@ -3,82 +3,69 @@
 // Definitions by: Syed Farhan Ali - https://github.com/sfali23
 // // Definitions: https://github.com/DefinitelyTyped/Monk
 
-///<reference path="./typings/index.d.ts" />
 
-declare module "monk" {
-    
-    import {Promise} from "es6-promise";
 
-    function Monk(uri: string, options?: Object, calback?: Function): Monk.Manager;
+declare namespace monk {
+    export class Manager {
 
-    module Monk {
+        /**
+         *
+         * @return Manager
+         */
+        constructor(uri: string, options?: Object, calback?: Object);
 
-        function id(id?: string): any;
+        get(collection: string): Collection;
 
-        export interface Manager {
+        create(collection: string): Collection;
 
-            /**
-             *
-             * @return Manager
-             */
-            constructor(uri: string, options?: Object, calback?: Object): Monk.Manager;
+        close(force?: boolean, callback?: Function): void;
 
-            get(collection: string): Collection;
+        then(callback: Function): Promise<Manager>;
 
-            create(collection: string): Collection;
+        catch(callback: Function): Promise<Manager>;
+    } // end of interface "Manager"
 
-            close(force?: boolean, callback?: Function): void;
+    export class Collection {
+        /**
+         * Name of collection
+         */
+        name: string;
 
-            then(callback: Function): Promise<Manager>;
+        aggregate(pipeline: Object, options?: Object, callback?: Function): Promise<Object>;
 
-            catch(callback: Function): Promise<Manager>;
-        } // end of interface "Manager"
+        bulkWrite(operations: Object, options?: Object, callback?: Function): Promise<Object>;
 
-        export interface Collection {
-            /**
-             * Name of collection
-             */
-            name: string;
+        count(query?: Object, options?: Object, callback?: Function): Promise<Number>;
 
-            aggregate(pipeline: Object, options?: Object, callback?: Function): Promise<Object>;
+        distinct(field: string, query?: Object, options?: Object, callback?: Function): Promise<Object>;
 
-            bulkWrite(operations: Object, options?: Object, callback?: Function): Promise<Object>;
+        drop(callback?: Function): Promise<Boolean>;
 
-            count(query?: Object, options?: Object, callback?: Function): Promise<Number>;
+        dropIndex(index: Object, options?: Object, callback?: Function): Promise<Object>;
 
-            distinct(field: string, query?: Object, options?: Object, callback?: Function): Promise<Object>;
+        dropIndexes(callback?: Function): Promise<Object>;
 
-            drop(callback?: Function): Promise<Boolean>;
+        index(fieldOrSpec: Object, options?: Object, callback?: Function): Promise<string>;
 
-            dropIndex(index: Object, options?: Object, callback?: Function): Promise<Object>;
+        ensureIndex(fieldOrSpec: Object, options?: Object, callback?: Function): Promise<string>;
 
-            dropIndexes(callback?: Function): Promise<Object>;
+        find(query?: Object, options?: Object, callback?: Function): Promise<Object[]>;
 
-            index(fieldOrSpec: Object, options?: Object, callback?: Function): Promise<string>;
+        findOne(query: Object, options?: Object, callback?: Function): Promise<Object>;
 
-            ensureIndex(fieldOrSpec: Object, options?: Object, callback?: Function): Promise<string>;
+        findOneAndDelete(query: Object, options?: Object, callback?: Function): Promise<Object>;
 
-            find(query?: Object, options?: Object, callback?: Function): Promise<Object[]>;
+        findOneAndUpdate(query: Object, update: Object, options?: Object, callback?: Function): Promise<Object>;
 
-            findOne(query: Object, options?: Object, callback?: Function): Promise<Object>;
+        group(keys: Object, condition: Object, initial: Object, reduce: Function, finalize?: Function, command?: Boolean, options?: Object, callback?: Object): Promise<Object>;
 
-            findOneAndDelete(query: Object, options?: Object, callback?: Function): Promise<Object>;
+        indexes(callback?: Function): Promise<Object[]>;
 
-            findOneAndUpdate(query: Object, update: Object, options?: Object, callback?: Function): Promise<Object>;
+        insert(docs: Object, options?: Object, callback?: Function): Promise<any>;
 
-            group(keys: Object, condition: Object, initial: Object, reduce: Function, finalize?: Function, command?: Boolean, options?: Object, callback?: Object): Promise<Object>;
+        remove(query?: Object, options?: Object, callback?: Function): Promise<Object>;
 
-            indexes(callback?: Function): Promise<Object[]>;
-
-            insert(docs: Object, options?: Object, callback?: Function): Promise<any>;
-
-            remove(query?: Object, options?: Object, callback?: Function): Promise<Object>;
-
-            update(query: Object, update: Object, options?: Object, callback?: Function): Promise<Object[]>;
-        } // end of interface "Collector"
-
-    } // end of module "Monk"
-
-    export = Monk;
-
+        update(query: Object, update: Object, options?: Object, callback?: Function): Promise<Object[]>;
+    } // end of interface "Collector"
 }
+
