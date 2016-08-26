@@ -8,6 +8,6 @@
     "files": [
         "monk-tests.ts",
         "../typings/index.d.ts",
-        "../monk.d.ts"
+        "../index.d.ts"
     ]
 }

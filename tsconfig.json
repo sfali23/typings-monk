@@ -6,7 +6,7 @@
         "noImplicitAny": true
     },
     "files": [
-        "monk.d.ts",
+        "index.d.ts",
         "typings/index.d.ts"
     ]
 }
