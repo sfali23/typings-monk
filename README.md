@@ -1,11 +1,12 @@
 # Typed Mongodb
-The type definition for [mongodb](https://github.com/mongodb/node-mongodb-native).
+The type definition for [monk](https://github.com/Automattic/monk).
 
 # Installation notes:
 
-1 You must install the node ambient module
+1 You must install the node and es6-promise
 ```
-typings install node --ambient --save
+typings install env~node --global --save
+typings install npm~es6-promise --save
 ```
 
 # License
