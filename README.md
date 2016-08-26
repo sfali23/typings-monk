@@ -1,4 +1,4 @@
-# Typed Mongodb
+# Typed Monk
 The type definition for [monk](https://github.com/Automattic/monk).
 
 # Installation notes:
