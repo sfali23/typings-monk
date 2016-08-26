@@ -1,4 +1,6 @@
-﻿import {Manager, Collection} from '../monk';
+﻿/// <reference path="../typings/index.d.ts" />
+
+import {Manager, Collection} from '../monk';
 
 var monk = require('monk');
 

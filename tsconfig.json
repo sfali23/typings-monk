@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es5",
         "module": "commonjs",
+        "moduleResolution": "node",
         "noImplicitAny": true
     },
     "files": [
-        "monk.d.ts"
+        "monk.d.ts",
+        "typings/index.d.ts"
     ]
 }
