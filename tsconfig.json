@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true
+    },
+    "files": [
+        "monk.d.ts",
+        "typings/index.d.ts"
+    ]
+}
