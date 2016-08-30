@@ -1,18 +1,20 @@
 ﻿/// <reference path="../typings/index.d.ts" />
+/// <reference path="./bundle.d.ts" />
 
-import {Manager, Collection} from '../index';
+import {Manager, Collection} from 'monk';
 
-var monk = require('monk');
+import monk = require("monk");
 
 const MONGO_DATABASE_URI: string = "localhost:27017/myproject";
 
 export class MonkTest {
-    private manager: Manager;
-    private collection: Collection;
-    private folderCollection: Collection;
-    private orderCollection: Collection;
+    private manager: monk.Manager;
+    private collection: monk.Collection;
+    private folderCollection: monk.Collection;
+    private orderCollection: monk.Collection;
 
     constructor() {
+        
         this.manager = monk(MONGO_DATABASE_URI);
 
         this.collection = this.manager.get("test");
