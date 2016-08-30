@@ -2,12 +2,11 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "moduleResolution": "node",
         "noImplicitAny": true
     },
     "files": [
         "monk-tests.ts",
-        "../typings/index.d.ts",
-        "../index.d.ts"
+        "bundle.d.ts",
+        "../typings/index.d.ts"
     ]
 }

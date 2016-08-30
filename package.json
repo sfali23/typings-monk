@@ -1,8 +1,16 @@
 {
-  "name": "typings-monk",
+  "name": "monk",
   "version": "1.0.0",
+  "private": true,
   "devDependencies": {
-    "monk": "3.1.2"
+    "tslint": "^3.15.1",
+    "typescript": "^1.8.10"
+  },
+  "scripts": {
+    "build": "typings bundle -o test/bundle.d.ts",
+    "test": "tsc -p test",
+    "execute": "node test/monk-tests.js",
+    "lint": "tslint -c tslint.json index.d.ts"
   },
   "license": "MIT",
   "keywords": [
