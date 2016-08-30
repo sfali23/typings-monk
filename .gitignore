@@ -4,3 +4,4 @@ typings
 *.log
 out/
 test/*.js
+test/*.d.ts
