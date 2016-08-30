@@ -8,10 +8,10 @@ import monk = require("monk");
 const MONGO_DATABASE_URI: string = "localhost:27017/myproject";
 
 export class MonkTest {
-    private manager: monk.Manager;
-    private collection: monk.Collection;
-    private folderCollection: monk.Collection;
-    private orderCollection: monk.Collection;
+    private manager: Manager;
+    private collection: Collection;
+    private folderCollection: Collection;
+    private orderCollection: Collection;
 
     constructor() {
         
