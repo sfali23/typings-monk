@@ -71,4 +71,3 @@ declare namespace Monk {
 declare var Monk: Monk;
 
 export = Monk;
-
